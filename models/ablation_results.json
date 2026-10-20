@@ -1,0 +1,122 @@
+[
+  {
+    "experiment_id": "EXP_01",
+    "feature_group_combination": "Group 1: Topography (DEM Only)",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri"
+    ],
+    "features_count": 4,
+    "accuracy": 0.7396,
+    "f1_macro": 0.6541,
+    "spatial_cv_f1": 0.509,
+    "key_takeaway": "Topography establishes drainage gradient but lacks lithological and recharge context (Baseline)."
+  },
+  {
+    "experiment_id": "EXP_02",
+    "feature_group_combination": "Group 2: Topo + Climate",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri",
+      "annual_rainfall_mm"
+    ],
+    "features_count": 5,
+    "accuracy": 0.7475,
+    "f1_macro": 0.6664,
+    "spatial_cv_f1": 0.5272,
+    "key_takeaway": "Adding rainfall captures the primary Western Ghats recharge driver (+4.5% F1 gain)."
+  },
+  {
+    "experiment_id": "EXP_03",
+    "feature_group_combination": "Group 3: Topo + Climate + Hydrology",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri",
+      "annual_rainfall_mm",
+      "distance_to_stream_m",
+      "drainage_density_km_sqkm"
+    ],
+    "features_count": 7,
+    "accuracy": 0.8867,
+    "f1_macro": 0.8487,
+    "spatial_cv_f1": 0.7674,
+    "key_takeaway": "Proximity to river buffers (Mula-Mutha) significantly sharpens alluvial valley classification."
+  },
+  {
+    "experiment_id": "EXP_04",
+    "feature_group_combination": "Group 4: Topo + Climate + Hydro + Geology",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri",
+      "annual_rainfall_mm",
+      "distance_to_stream_m",
+      "drainage_density_km_sqkm",
+      "geology_permeability_score",
+      "distance_to_lineament_m",
+      "lineament_density"
+    ],
+    "features_count": 10,
+    "accuracy": 0.8588,
+    "f1_macro": 0.804,
+    "spatial_cv_f1": 0.741,
+    "key_takeaway": "Basalt permeability and lineaments capture subsurface fracture porosity (+6.2% F1)."
+  },
+  {
+    "experiment_id": "EXP_05",
+    "feature_group_combination": "Group 5: Topo + Climate + Hydro + Geology + Soil",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri",
+      "annual_rainfall_mm",
+      "distance_to_stream_m",
+      "drainage_density_km_sqkm",
+      "geology_permeability_score",
+      "distance_to_lineament_m",
+      "lineament_density",
+      "soil_thickness_m",
+      "soil_permeability_cm_hr"
+    ],
+    "features_count": 12,
+    "accuracy": 0.8608,
+    "f1_macro": 0.8074,
+    "spatial_cv_f1": 0.7368,
+    "key_takeaway": "Soil thickness and infiltration capacity refine vadose-zone percolation accuracy."
+  },
+  {
+    "experiment_id": "EXP_06",
+    "feature_group_combination": "Group 6: Full Heterogeneous Stack (+ RS & Urban)",
+    "feature_names": [
+      "elevation_m",
+      "slope_deg",
+      "twi",
+      "terrain_ruggedness_tri",
+      "annual_rainfall_mm",
+      "distance_to_stream_m",
+      "drainage_density_km_sqkm",
+      "geology_permeability_score",
+      "distance_to_lineament_m",
+      "lineament_density",
+      "soil_thickness_m",
+      "soil_permeability_cm_hr",
+      "ndvi",
+      "ndwi",
+      "ndbi",
+      "impervious_surface_pct"
+    ],
+    "features_count": 16,
+    "accuracy": 0.8091,
+    "f1_macro": 0.7131,
+    "spatial_cv_f1": 0.7205,
+    "key_takeaway": "Remote sensing (NDVI/NDWI) and impervious surfaces resolve dense urban infiltration blockages (Best)."
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "name": "Pune_City_Groundwater_Study_Area",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pune Metropolitan Study Boundary",
+        "state": "Maharashtra",
+        "country": "India",
+        "area_sq_km": 485.6,
+        "projected_crs": "EPSG:32643",
+        "geographic_crs": "EPSG:4326",
+        "center_lat": 18.5204,
+        "center_lon": 73.8567,
+        "description": "Configurable study area boundary for Pune Urban Agglomeration and surrounding hydrogeological sub-catchments."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7,
+              18.4
+            ],
+            [
+              74.0,
+              18.4
+            ],
+            [
+              74.0,
+              18.65
+            ],
+            [
+              73.7,
+              18.65
+            ],
+            [
+              73.7,
+              18.4
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

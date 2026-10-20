@@ -1,0 +1,48 @@
+# ==========================================
+# Git Ignore Rules for Groundwater AI Platform
+# ==========================================
+
+# Node / Frontend Dependencies (CRITICAL: Prevents 120+ MB upload)
+node_modules/
+*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Production Build Artifacts
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Python Environments & Cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor & OS Metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large runtime logs
+*.log

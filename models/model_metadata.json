@@ -1,0 +1,283 @@
+{
+  "model_type": "XGBoost Classifier (Multi-Class: Low, Moderate, High)",
+  "regression_model_type": "XGBoost Regressor (Depth to water table in mbgl)",
+  "training_date": "2026-08-30 14:35:58",
+  "features": [
+    "elevation_m",
+    "slope_deg",
+    "twi",
+    "terrain_ruggedness_tri",
+    "distance_to_stream_m",
+    "drainage_density_km_sqkm",
+    "annual_rainfall_mm",
+    "geology_permeability_score",
+    "distance_to_lineament_m",
+    "lineament_density",
+    "soil_thickness_m",
+    "soil_permeability_cm_hr",
+    "ndvi",
+    "ndwi",
+    "ndbi",
+    "impervious_surface_pct"
+  ],
+  "classes": [
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "best_accuracy": 0.8111,
+  "best_f1": 0.7171,
+  "best_spatial_cv_f1": 0.7314,
+  "benchmark_summary": [
+    {
+      "model_name": "Logistic Regression",
+      "model_type": "Linear Baseline",
+      "accuracy": 0.9165,
+      "precision_macro": 0.5955,
+      "recall_macro": 0.6069,
+      "f1_macro": 0.6006,
+      "roc_auc_ovr": null,
+      "spatial_cv_f1": 0.743,
+      "random_cv_f1": 0.8738,
+      "spatial_autocorrelation_drop_pct": 14.96,
+      "training_time_seconds": 0.048,
+      "confusion_matrix": [
+        [
+          332,
+          27,
+          0
+        ],
+        [
+          14,
+          129,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "classes": [
+        "Low",
+        "Moderate",
+        "High"
+      ]
+    },
+    {
+      "model_name": "Support Vector Machine (RBF)",
+      "model_type": "Kernel Baseline",
+      "accuracy": 0.7893,
+      "precision_macro": 0.8059,
+      "recall_macro": 0.6527,
+      "f1_macro": 0.6717,
+      "roc_auc_ovr": null,
+      "spatial_cv_f1": 0.7156,
+      "random_cv_f1": 0.8694,
+      "spatial_autocorrelation_drop_pct": 17.68,
+      "training_time_seconds": 0.164,
+      "confusion_matrix": [
+        [
+          349,
+          10
+        ],
+        [
+          96,
+          48
+        ]
+      ],
+      "classes": [
+        "Low",
+        "Moderate",
+        "High"
+      ]
+    },
+    {
+      "model_name": "Random Forest",
+      "model_type": "Tree Ensemble Baseline",
+      "accuracy": 0.7952,
+      "precision_macro": 0.8179,
+      "recall_macro": 0.6611,
+      "f1_macro": 0.6822,
+      "roc_auc_ovr": null,
+      "spatial_cv_f1": 0.7161,
+      "random_cv_f1": 0.871,
+      "spatial_autocorrelation_drop_pct": 17.79,
+      "training_time_seconds": 0.283,
+      "confusion_matrix": [
+        [
+          350,
+          9
+        ],
+        [
+          94,
+          50
+        ]
+      ],
+      "classes": [
+        "Low",
+        "Moderate",
+        "High"
+      ]
+    },
+    {
+      "model_name": "XGBoost Classifier",
+      "model_type": "Gradient Boosted Tree (Production)",
+      "accuracy": 0.8111,
+      "precision_macro": 0.8296,
+      "recall_macro": 0.6909,
+      "f1_macro": 0.7171,
+      "roc_auc_ovr": null,
+      "spatial_cv_f1": 0.7314,
+      "random_cv_f1": 0.8657,
+      "spatial_autocorrelation_drop_pct": 15.51,
+      "training_time_seconds": 0.351,
+      "confusion_matrix": [
+        [
+          349,
+          10
+        ],
+        [
+          85,
+          59
+        ]
+      ],
+      "classes": [
+        "Low",
+        "Moderate",
+        "High"
+      ]
+    }
+  ],
+  "feature_importance": [
+    {
+      "feature_name": "elevation_m",
+      "display_name": "Elevation",
+      "category": "Topography",
+      "importance_score": 23.08,
+      "shap_mean_abs": 0.8485,
+      "description": "Higher elevations experience greater hydraulic runoff, reducing recharge"
+    },
+    {
+      "feature_name": "distance_to_stream_m",
+      "display_name": "Distance to River/Drainage",
+      "category": "Hydrology",
+      "importance_score": 16.01,
+      "shap_mean_abs": 0.5888,
+      "description": "Proximity to Mula/Mutha rivers provides direct recharge buffer"
+    },
+    {
+      "feature_name": "terrain_ruggedness_tri",
+      "display_name": "Terrain Ruggedness (TRI)",
+      "category": "Topography",
+      "importance_score": 12.89,
+      "shap_mean_abs": 0.4741,
+      "description": "High terrain roughness indicates dissected bedrock and poor retention"
+    },
+    {
+      "feature_name": "drainage_density_km_sqkm",
+      "display_name": "Drainage Density",
+      "category": "Hydrology",
+      "importance_score": 11.22,
+      "shap_mean_abs": 0.4125,
+      "description": "High drainage density facilitates surface runoff and recharge pathways"
+    },
+    {
+      "feature_name": "annual_rainfall_mm",
+      "display_name": "Annual Rainfall",
+      "category": "Climate",
+      "importance_score": 7.85,
+      "shap_mean_abs": 0.2885,
+      "description": "Monsoon precipitation is the primary replenishment source"
+    },
+    {
+      "feature_name": "geology_permeability_score",
+      "display_name": "Geological Permeability",
+      "category": "Geology",
+      "importance_score": 6.67,
+      "shap_mean_abs": 0.2452,
+      "description": "Porosity and hydraulic conductivity of basaltic/alluvial lithology"
+    },
+    {
+      "feature_name": "slope_deg",
+      "display_name": "Slope",
+      "category": "Topography",
+      "importance_score": 6.6,
+      "shap_mean_abs": 0.2429,
+      "description": "Steep slopes promote rapid runoff; gentle slopes allow water infiltration"
+    },
+    {
+      "feature_name": "impervious_surface_pct",
+      "display_name": "Impervious Surface Ratio",
+      "category": "Urban",
+      "importance_score": 4.21,
+      "shap_mean_abs": 0.155,
+      "description": "Concrete, asphalt, and rooftops block aquifer recharge"
+    },
+    {
+      "feature_name": "distance_to_lineament_m",
+      "display_name": "Distance to Lineament/Fracture",
+      "category": "Geology",
+      "importance_score": 3.94,
+      "shap_mean_abs": 0.145,
+      "description": "Proximity to structural lineaments provides secondary fracture porosity"
+    },
+    {
+      "feature_name": "ndvi",
+      "display_name": "Normalized Difference Veg Index (NDVI)",
+      "category": "Remote Sensing",
+      "importance_score": 3.54,
+      "shap_mean_abs": 0.1303,
+      "description": "Dense vegetation indicates perennial moisture retention"
+    },
+    {
+      "feature_name": "lineament_density",
+      "display_name": "Lineament Density",
+      "category": "Geology",
+      "importance_score": 1.73,
+      "shap_mean_abs": 0.0634,
+      "description": "High fracture density dramatically increases deep aquifer transmissivity"
+    },
+    {
+      "feature_name": "twi",
+      "display_name": "Topographic Wetness Index (TWI)",
+      "category": "Topography",
+      "importance_score": 1.21,
+      "shap_mean_abs": 0.0444,
+      "description": "High wetness index indicates natural flow convergence and accumulation"
+    },
+    {
+      "feature_name": "soil_thickness_m",
+      "display_name": "Soil Thickness",
+      "category": "Soil",
+      "importance_score": 0.57,
+      "shap_mean_abs": 0.021,
+      "description": "Thicker soil profiles retain percolation moisture before reaching bedrock"
+    },
+    {
+      "feature_name": "ndwi",
+      "display_name": "Normalized Difference Water Index (NDWI)",
+      "category": "Remote Sensing",
+      "importance_score": 0.37,
+      "shap_mean_abs": 0.0136,
+      "description": "Surface moisture and water presence index"
+    },
+    {
+      "feature_name": "soil_permeability_cm_hr",
+      "display_name": "Soil Permeability",
+      "category": "Soil",
+      "importance_score": 0.06,
+      "shap_mean_abs": 0.0022,
+      "description": "Rate at which surface water infiltrates the vadose zone"
+    },
+    {
+      "feature_name": "ndbi",
+      "display_name": "Normalized Difference Built-up Index (NDBI)",
+      "category": "Remote Sensing",
+      "importance_score": 0.05,
+      "shap_mean_abs": 0.0018,
+      "description": "Built-up land cover prevents natural surface infiltration"
+    }
+  ],
+  "spatial_leakage_note": "Spatial Block K-Fold isolates spatial clusters to avoid over-optimistic performance from spatial autocorrelation."
+}
