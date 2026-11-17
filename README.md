@@ -10,7 +10,7 @@
 
 ---
 
-## 🌊 Overview
+##  Overview
 **GeoHydroAI** is a production-ready, final-year B.Tech CSE (Artificial Intelligence) capstone project that estimates **Groundwater Potential (GWP)** and water table depth across the **Pune Metropolitan Region, Maharashtra, India** ($18.40^\circ\text{N} - 18.65^\circ\text{N}, 73.70^\circ\text{E} - 74.00^\circ\text{E}$).
 
 The platform combines 16 multi-source heterogeneous geospatial layers:
@@ -24,7 +24,7 @@ The platform combines 16 multi-source heterogeneous geospatial layers:
 
 ---
 
-## 🔬 Scientific Highlights & Research Rigor
+##  Scientific Highlights & Research Rigor
 1. **Spatial Autocorrelation Leakage Prevention:** Conventional random K-Fold CV permits spatial autocorrelation leakage between nearby points, overestimating F1 score by **17.2%**. We implement **Spatial Block K-Fold Cross-Validation** to ensure true geographic generalization.
 2. **Multi-Model Benchmark & Ablation Study:** Evaluates Logistic Regression, SVM, Random Forest, and XGBoost across 6 progressive feature fusion stages (DEM only $\to$ Climate $\to$ Hydrology $\to$ Geology $\to$ Soil $\to$ Full Multi-Source Stack).
 3. **Explainable AI (XAI):** Integrated **SHAP TreeExplainer** decomposes each coordinate prediction into top positive recharge drivers and top negative runoff/blockage factors with uncertainty margins.
@@ -32,7 +32,7 @@ The platform combines 16 multi-source heterogeneous geospatial layers:
 
 ---
 
-## 🚀 Quickstart Guide
+##  Quickstart Guide
 
 ### Option 1: 1-Click Startup with Docker Compose
 ```bash
@@ -70,7 +70,7 @@ Open `http://localhost:3000` in your web browser.
 
 ---
 
-## 🧪 Test Suite Execution
+## Test Suite Execution
 ```bash
 pytest backend/tests -v
 ```
@@ -78,7 +78,7 @@ pytest backend/tests -v
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 groundwater-ai-platform/
 ├── backend/                  # FastAPI REST Microservice

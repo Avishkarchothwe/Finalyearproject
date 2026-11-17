@@ -8,7 +8,7 @@ import {
   DataQualityReport
 } from '../types';
 
-const API_BASE = '/api/v1';
+const API_BASE = (import.meta as any).env.VITE_API_URL || '/api/v1';
 
 export async function fetchHealth(): Promise<any> {
   const res = await fetch(`${API_BASE}/health`);
